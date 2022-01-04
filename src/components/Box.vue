@@ -1,7 +1,7 @@
 <template>
   <div class="box">
-    <p>{{ title }}</p>
-    <p>{{ description }}</p>
+    <p class="title">{{ title }}</p>
+    <p class="description">{{ description }}</p>
   </div>
 </template>
 
@@ -17,18 +17,12 @@ export default {
     height: 25vh;
     width: 35vw;
   }
-  .box > p {
-    font-size: x-large;
-  }
 }
 
 @media (max-width: 2000px) and (min-width: 600px) {
   .box {
     height: 25vh;
     width: 30vw;
-  }
-  .box > p {
-    font-size: xx-large;
   }
 }
 
@@ -42,5 +36,15 @@ export default {
   flex-direction: column;
   padding: 3%;
   margin: 1%;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.description {
+  align-self: flex-end;
+  text-align: right;
+  font-size: xx-large;
 }
 </style>
