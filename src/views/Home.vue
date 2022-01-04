@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h2>Your IP: {{ ip }}</h2>
+    <h2>Your Country: {{ country.name }}</h2>
+    <h2>Your City: {{ city.name }}</h2>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+  setup() {
+    const store = useStore();
+    return {
+      ip: computed(() => store.state.ip),
+      country: computed(() => store.state.country),
+      city: computed(() => store.state.city),
+    };
+  },
+};
 </script>
