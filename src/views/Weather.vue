@@ -11,8 +11,10 @@
           ).toLocaleString()
         }}
       </p>
-      <p>{{ weatherInfo.main.temp }}°C</p>
+      <p v-if="!celsius">{{ weatherInfo.main.temp * 1.8 + 32 }}°F</p>
+      <p v-if="celsius">{{ weatherInfo.main.temp }}°C</p>
       <p>{{ weatherInfo.weather[0].main }}</p>
+      <Toggle v-model="celsius" on-label="°C" off-label="°F" />
     </div>
   </div>
 </template>
@@ -20,8 +22,12 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import Toggle from "@vueform/toggle";
 
 export default {
+  components: {
+    Toggle,
+  },
   setup() {
     const store = useStore();
     return {
@@ -31,5 +37,12 @@ export default {
       weatherInfo: computed(() => store.state.weatherInfo),
     };
   },
+  data() {
+    return {
+      celsius: true,
+    };
+  },
 };
 </script>
+
+<style src="@vueform/toggle/themes/default.css"></style>
