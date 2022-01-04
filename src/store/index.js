@@ -55,11 +55,31 @@ export default createStore({
     },
 
     getWeatherInfo({ commit, state }) {
-      // interface Response {}
+      // interface Response {
+      //   weather: [
+      //     {
+      //       main: string, // weather name;
+      //       description: string, // weather description
+      //     }
+      //   ];
+      //   main: {
+      //     temp: number, // in celsius
+      //     feels_like: number,
+      //     temp_min: number,
+      //     temp_max: number,
+      //     pressure: number,
+      //     humidity: number,
+      //   };
+      //   wind: {
+      //     speed: number,
+      //     deg: number,
+      //     gust: number,
+      //   };
+      // }
 
       (async () => {
         const api = "2bf3eaf54118e29759b2aaceb7bfe147";
-        const url = `https://api.openweathermap.org/data/2.5/weather?id=${state.city.geoname_id}&appid=${api}`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?id=${state.city.geoname_id}&appid=${api}&units=metric`;
         const response = await fetch(url);
         const js = await response.json();
         console.log(js);
