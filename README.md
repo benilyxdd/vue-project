@@ -1,24 +1,8 @@
-# vue-project
+#weather reporter
 
-## Project setup
-```
-yarn install
-```
+## mobile
+<img src="https://github.com/benilyxdd/weather-reporter/blob/46195e52d00c7b415651452f3c3071ea3294f6d3/screenshots/main-screen-mobile.png" alt="mobile" width="300" />
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## pc
+<img src="https://github.com/benilyxdd/weather-reporter/blob/46195e52d00c7b415651452f3c3071ea3294f6d3/screenshots/main-screen-pc.png" alt="pc" width="300" />
